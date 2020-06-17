@@ -1,17 +1,21 @@
-import Rpi.Gpio as GPIO
+
+import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11, GPIO.IN)
-GPIO.setup(7, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
 
-GPIO.output(7, False)
+GPIO.output(12, False)
 
 while True:
-  if GPIO.input(11):
-      GPIO.output(7, False)
+  while not GPIO.input(11):
+    print('button pressed')
+    GPIO.output(12, GPIO.HIGH)
+    time.sleep(0.2)
   else:
-    GPIO.output(7, True)
-      time.sleep(0.25)
-    GPIO.output(7, True)
-      time.sleep(0.25)
+    GPIO.output(12, GPIO.HIGH)
+    time.sleep(0.1)
+    GPIO.output(12, GPIO.LOW)
+    time.sleep(0.1)
+    print('button not pressed')
