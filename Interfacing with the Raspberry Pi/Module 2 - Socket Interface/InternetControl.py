@@ -1,5 +1,6 @@
 #Internet Control
 import socket
+import RPi.GPIO as GPIO
 
 '''Control via the Internet'''
 #Controlling a device over the Internet is interesting
