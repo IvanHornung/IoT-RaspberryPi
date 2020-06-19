@@ -12,7 +12,7 @@ A_SECRET = ""
 
 api = Twython(C_KEY, C_SECRET, A_TOKEN, A_SECRET)
 
-api.update_status("Hi")
+api.update_status(status="Hi")
 
 'Searching for a Hashtag'
 #Maybe we want the Raspberry Pi to react to a hashtag
