@@ -6,7 +6,7 @@ import picamera
 #   -Home security system
 #Capturing an image, send it on a connection
 
-mysocket = socket.socket()
+mysock = socket.socket()
 mysock.connect(('aserver', 8000))
 conn = mysocket.makefil('wb') #makes file object in global directory; wb are permissions: you can write to this file
 camera.capture(conn, 'jpeg') 
