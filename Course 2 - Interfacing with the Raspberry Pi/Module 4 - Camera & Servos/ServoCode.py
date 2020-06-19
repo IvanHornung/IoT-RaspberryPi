@@ -2,7 +2,8 @@
 
 #makes servo go left and right 100 degrees
 'Servo Scan Code Example'
-import RPi.GPIO as GPIO
+import Rpi.GPIO as GPIO
+import time
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(12, GPIO.OUT)
